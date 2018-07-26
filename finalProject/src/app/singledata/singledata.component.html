@@ -1,0 +1,23 @@
+<table class="table table-responsive table-bordered table-striped">
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>{{ data.id }}</td>
+    </tr>
+    <tr>
+      <td>User Id</td>
+      <td>{{ data.userId }}</td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td>{{ data.title }}</td>
+    </tr>
+    <tr>
+      <td>Body</td>
+      <td>{{ data.body }}</td>
+    </tr>
+    <tr *ngIf="Error">
+      <td colspan="4">{{errorMessage}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,29 @@
+<h1>Student List</h1>
+<!-- <search-bar (Search)="OnStudentSearch($event)"></search-bar>  -->
+<app-studentsearch [studentName]="students[0].studentName" (searchText)="searchInList($event)"></app-studentsearch>
+<table class="table table-responsive table-bordered table-striped">  
+    <thead>  
+        <tr>  
+            <th>Student ID</th>  
+            <th>Name</th>  
+            <th>Gender</th>  
+            <th>Age</th>  
+            <th>Course</th>   
+            <th>DOB</th>     
+            <th>Grade</th>   
+            <th>Rating</th>           
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr *ngFor="let s of students;">  
+            <td>{{s.studentID}}</td>  
+            <td>{{s.studentName | uppercase}}</td>  
+            <td>{{s.gender | lowercase}}</td>  
+            <td>{{s.age | currency : 'USD' : 'symbol' }}</td>  
+            <td>{{s.course}}</td>  
+            <td>{{s.DOB | date:'dd/MM/yyyy' | uppercase }}</td>  
+            <td>{{s.grade | percent:'.2'}}</td>  
+            <td>{{s.rating | number:'2.1-3'}}</td>  
+        </tr>  
+    </tbody>  
+</table>  

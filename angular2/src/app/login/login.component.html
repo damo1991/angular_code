@@ -1,0 +1,27 @@
+<div>
+  <h1>Login Form</h1>
+  <form (ngSubmit)="onSubmit(form.value)" [formGroup]="form">
+    <div class="form-group">
+      <label for="studentID">AccountNo</label>
+      <input type="text" class="form-control" id="AccountNo" formControlName="AccountNo">
+      <div [hidden]="form.controls['AccountNo'].valid || form.controls['AccountNo'].pristine" class="alert alert-danger">
+        AccountNumber is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="studentID">Country</label>
+      <input type="text" class="form-control" id="Country" formControlName="Country">
+      <div [hidden]="form.controls['Country'].valid || form.controls['Country'].pristine" class="alert alert-danger">
+        Country is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="studentID">Password</label>
+      <input type="Password" class="form-control" id="Password" formControlName="Password">
+      <div [hidden]="form.controls['Password'].valid || form.controls['Password'].pristine" class="alert alert-danger">
+        Password is required
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!form.valid">Submit</button>
+  </form>
+</div>
